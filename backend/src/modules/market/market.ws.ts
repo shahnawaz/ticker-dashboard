@@ -12,7 +12,7 @@ export class MarketGateway implements OnModuleInit {
   onModuleInit() {
     this.market.subscribe((symbol, price) => {
       const payload = JSON.stringify({ type: 'price', symbol, price, ts: Date.now() });
-      this.server.clients.forEach(client => {
+      this.server.clients.forEach((client) => {
         if (client.readyState === 1 /* OPEN */) client.send(payload);
       });
     });

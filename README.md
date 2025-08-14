@@ -1,6 +1,6 @@
 # Real-Time Trading Dashboard — Next.js + NestJS
 
-**Frontend**: Next.js (App Router) + TypeScript + Tailwind + Suspense + Recharts  
+**Frontend**: Next.js (App Router) + TypeScript + Tailwind + Suspense + Recharts
 **Backend**: NestJS (REST + WebSockets) with mocked auth and in-memory caching
 
 ## Features
@@ -49,6 +49,16 @@ Then:
 cd frontend
 npm install
 npm run dev
+```
+
+## Format all files
+
+```bash
+# backend
+npm run format
+
+# frontend
+npm run format
 ```
 
 ## Tests (Backend)

@@ -13,7 +13,9 @@ export class MarketService implements OnModuleInit {
     'BTC-USD': 65000,
   };
   private historyCache: Record<Symbol, Series> = {
-    AAPL: [], TSLA: [], 'BTC-USD': []
+    AAPL: [],
+    TSLA: [],
+    'BTC-USD': [],
   };
   private interval: NodeJS.Timeout | null = null;
   private listeners: Set<(symbol: Symbol, price: number) => void> = new Set();
@@ -38,8 +40,12 @@ export class MarketService implements OnModuleInit {
     }, 1000);
   }
 
-  getTickers(): Symbol[] { return [...this.tickers]; }
-  getLivePrice(symbol: Symbol) { return this.livePrices[symbol]; }
+  getTickers(): Symbol[] {
+    return [...this.tickers];
+  }
+  getLivePrice(symbol: Symbol) {
+    return this.livePrices[symbol];
+  }
 
   getHistory(symbol: Symbol): Series {
     if (this.historyCache[symbol].length === 0) {
@@ -65,5 +71,7 @@ export class MarketService implements OnModuleInit {
     const driftDir = Math.random() < 0.5 ? -1 : 1;
     return Math.max(0.01, p + step + driftDir * drift);
   }
-  private round2(n: number) { return Math.round(n * 100) / 100; }
+  private round2(n: number) {
+    return Math.round(n * 100) / 100;
+  }
 }
