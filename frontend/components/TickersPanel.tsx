@@ -6,7 +6,6 @@ import { useSelectedSymbol } from '../lib/useSelectedSymbol'
 type Last = Record<string, { price: number; prev?: number }>
 
 export default function TickersPanel() {
-  console.log('TickersPanel rendered');
   const [tickers, setTickers] = useState<string[]>([])
   const [last, setLast] = useState<Last>({})
   const { selected, setSelected } = useSelectedSymbol()

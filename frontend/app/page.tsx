@@ -16,7 +16,6 @@ export default function Page() {
 }
 
 function SkeletonCard({ title }: { title: string }) {
-    console.log('SkeletonCard rendered');
     return (
         <div className="rounded-2xl border bg-white p-4 dark:border-gray-800 dark:bg-gray-900">
             <div className="mb-3 text-sm font-medium text-gray-500 dark:text-gray-400">{title}</div>
