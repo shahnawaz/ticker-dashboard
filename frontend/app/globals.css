@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* light/dark sticky preference */
+:root { color-scheme: light dark; }
+html { height: 100%; }
+body { min-height: 100%; }
+
+/* persist dark mode */
+@media (prefers-color-scheme: dark) {
+    :root { color-scheme: dark; }
+}
